@@ -1,0 +1,87 @@
+Prerequisites
+
+Before we begin, ensure you have the following:
+
+    Ubuntu 24.04 installed on your machine.
+
+    A stable internet connection.
+
+    At least 8GB of RAM (16GB or more is recommended for smoother performance).
+
+    Basic familiarity with the terminal.
+
+====
+
+Step 1: Update Your System and Install Dependencies
+
+     sudo apt update
+===
+Install Python, pip, and Git, which are required for running DeepSeek and Ollama.
+
+     sudo apt install python3 python3-pip git -y
+
+--
+Verify the installations:
+
+  python3 --version
+  pip3 --version
+  git --version
+
+=====================
+
+Step 2: Install Ollama
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+ollama --version
+
+sudo systemctl start ollama
+sudo systemctl enable ollama
+
+=========================
+
+Step 3: Download and Run the DeepSeek Model
+
+ollama run deepseek-r1:7b
+
+
+ollama list
+
+
+==================
+
+Step 4: Set Up a Web UI for DeepSeek
+
+1. Create a Python Virtual Environment
+
+sudo apt install python3-venv -y
+python3 -m venv ~/open-webui-venv
+source ~/open-webui-venv/bin/activate
+
+
+2. Install Open WebUI
+
+  pip install open-webui
+
+3. Start the Web UI Server
+
+  open-webui serve
+
+====
+
+By default, the Web UI will be accessible at http://localhost or server-ip:8080.
+
+======
+
+Step 5: Access the Web UI and Use DeepSeek
+
+    Open your web browser and navigate to http://localhost or server ip :8080.
+
+    Create an admin account when prompted.
+
+    In the Web UI, select the DeepSeek model from the dropdown menu.
+
+    Start interacting with DeepSeek! You can ask questions, generate text, or perform other tasks supported by the model.
+
+
+
